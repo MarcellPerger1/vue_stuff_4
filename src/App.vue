@@ -1,10 +1,10 @@
 <script setup>
-import FileItem from './components/FileItem.vue';
+import FileList from './components/FileList.vue';
 </script>
 
 <template>
   <main>
-    <FileItem filename="abcefg.vue"></FileItem>
+    <FileList :files-list="['main.js', 'App.vue']"></FileList>
   </main>
 </template>
 
