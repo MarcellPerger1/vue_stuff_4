@@ -8,14 +8,12 @@ defineProps({
 </script>
 
 <template>
-  <div class="rt">
-    <div class="file-item">
-      <div class="file-icon-container">
-        <img src="../assets/logo.svg" />
-      </div>
-      <div class="fsobj-name file-name">
-        {{ filename }}
-      </div>
+  <div class="file-item">
+    <div class="file-icon-container">
+      <img src="../assets/logo.svg" />
+    </div>
+    <div class="fsobj-name file-name">
+      {{ filename }}
     </div>
   </div>
 </template>
