@@ -16,6 +16,13 @@
   display: grid;
   place-content: center;
 }
+.ico-container > * {
+  width: 1.2em;
+  height: 1.2em;
+}
+.ico-container > img {
+  object-fit: contain;
+}
 
 .file-item {
   font-size: 16px;
@@ -30,10 +37,5 @@
   margin-left: 1em;
   height: 1em;
   line-height: 1em;
-}
-
-.ic {
-  width: 1.1em;
-  max-height: 1.4em;
 }
 </style>
