@@ -8,24 +8,32 @@ defineProps({
 </script>
 
 <template>
-  <div class="file-item">
-      <div class="ico-container">
-        <img class="ic" src="./assets/logo.svg" />
+  <div class="rt">
+    <div class="file-item">
+      <div class="file-icon-container">
+        <img src="../assets/logo.svg" />
       </div>
       <div class="fsobj-name file-name">
         {{ filename }}
       </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
-.ico-container {
+.file-icon-container {
   display: grid;
   place-content: center;
 }
+.file-icon-container > :deep(*) {
+  width: 1.1em;
+  height: 1.1em;
+}
+.file-icon-container > :deep(img) {
+  object-fit: contain;
+}
 
 .file-item {
-  font-size: 16px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -34,14 +42,8 @@ defineProps({
 }
 
 .file-name {
-  margin-left: 1em;
+  margin-left: 0.5em;
   height: 1em;
   line-height: 1em;
 }
-
-.ic {
-  width: 1.1em;
-  max-height: 1.4em;
-}
 </style>
-
