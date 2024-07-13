@@ -1,16 +1,36 @@
 <script setup>
-defineProps({
+import { computed } from 'vue';
+
+const props = defineProps({
   filename: {
     type: String,
     required: true
   }
 });
+
+function getSuffix(/** @type {string} */fileName) {
+  let dotParts = fileName.split('/').at(-1).split(".");
+  return dotParts.length <= 1 ? '' : dotParts.at(-1);
+}
+
+var logosMap = {js: "js.svg", vue: "vue.svg"};
+
+function getLogoNameFor(filename) {
+  return logosMap[getSuffix(filename)] ?? 'unknown.svg';
+}
+function getLogoPathFor(filename) {
+  return `/logos/${getLogoNameFor(filename)}`;
+}
+const logoSrc = computed(() => {
+  return getLogoPathFor(props.filename);
+})
+
 </script>
 
 <template>
   <div class="file-item">
     <div class="file-icon-container">
-      <img src="../assets/logo.svg" />
+      <img :src="logoSrc" />
     </div>
     <div class="fsobj-name file-name">
       {{ filename }}
@@ -36,6 +56,7 @@ defineProps({
   flex-direction: row;
   align-items: center;
   padding: 0.1em;
+  padding-left: 0.4em;
   height: 1.8em;
 }
 
