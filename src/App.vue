@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
 import TheWelcome from "./components/TheWelcome.vue";
+import FileItem from "./components/FileItem.vue";
 </script>
 
 <template>
@@ -14,6 +15,13 @@ import TheWelcome from "./components/TheWelcome.vue";
 
   <main>
     <TheWelcome />
+    <div>
+      <FileItem filename="abcdef.vue">
+        <template #icon>
+          <img src="./assets/logo.svg" />
+        </template>
+      </FileItem>
+    </div>
   </main>
 </template>
 
