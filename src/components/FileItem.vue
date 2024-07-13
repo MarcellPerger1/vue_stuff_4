@@ -26,8 +26,8 @@ defineProps({
   place-content: center;
 }
 .file-icon-container > :deep(*) {
-  width: 1.1em;
-  height: 1.1em;
+  width: 1.0em;
+  height: 1.0em;
 }
 .file-icon-container > :deep(img) {
   object-fit: contain;
@@ -41,7 +41,7 @@ defineProps({
   height: 1.8em;
 }
 
-.file-name {
+.fsobj-name {
   margin-left: 0.5em;
   height: 1em;
   line-height: 1em;

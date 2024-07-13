@@ -4,7 +4,7 @@ import FileItem from './components/FileItem.vue';
 
 <template>
   <main>
-    <FileItem filename="abc.vue"></FileItem>
+    <FileItem filename="abcefg.vue"></FileItem>
   </main>
 </template>
 
