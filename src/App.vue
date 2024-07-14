@@ -4,7 +4,7 @@ import FileList from './components/FileList.vue';
 
 <template>
   <main>
-    <FileList :files-list="['main.js', 'App.vue', 'other']"></FileList>
+    <FileList :files-list="['main.js', 'App.vue', 'index.html', 'other', 'a.txt', 'M.json']"></FileList>
   </main>
 </template>
 
