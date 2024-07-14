@@ -12,18 +12,34 @@ function getSuffix(/** @type {string} */fileName) {
   let dotParts = fileName.split('/').at(-1).split(".");
   return dotParts.length <= 1 ? '' : dotParts.at(-1);
 }
+function isLightMode() {
+  if(matchMedia('(prefers-color-scheme: light)').matches) {
+    return true;
+  }
+  return false;
+}
 
-var logosMap = {js: "js.svg", vue: "vue.svg"};
+/** @type {{[k: string]: string | {light: string, dark: string}}} */
+var logosMap = {
+  js: "js.svg", 
+  vue: "vue.svg",
+   '': {
+    light: 'unknown-light.svg',
+    dark: 'unknown-dark.svg'
+  }
+};
 
 function getLogoNameFor(filename) {
-  return logosMap[getSuffix(filename)] ?? 'unknown.svg';
+  let result = logosMap[getSuffix(filename)];
+  if(typeof result === 'string') return result;
+  return isLightMode() ? result.light : result.dark;
 }
 function getLogoPathFor(filename) {
   return `/logos/${getLogoNameFor(filename)}`;
 }
 const logoSrc = computed(() => {
   return getLogoPathFor(props.filename);
-})
+});
 
 </script>
 
