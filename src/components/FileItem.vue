@@ -23,14 +23,14 @@ function isLightMode() {
 var logosMap = {
   js: "js.svg", 
   vue: "vue.svg",
-   '': {
+  '': {
     light: 'unknown-light.svg',
     dark: 'unknown-dark.svg'
   }
 };
 
 function getLogoNameFor(filename) {
-  let result = logosMap[getSuffix(filename)];
+  let result = logosMap[getSuffix(filename)] ?? logosMap[''];
   if(typeof result === 'string') return result;
   return isLightMode() ? result.light : result.dark;
 }
